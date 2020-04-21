@@ -30,8 +30,13 @@
                     </a>
                 </div>
                 <div class="user-access">
-                    <a href="#">Register</a>
-                    <a href="#" class="in">Sign in</a>
+                    {{#if firstName}}
+                        <strong>Hi, {{firstName}}</strong>
+                        <a href="/users/logout">Logout</a>
+                    {{else}}
+                        <a href="#">Register</a>
+                        <a href="#" class="in">Sign in</a>
+                    {{/if}}
                 </div>
                 <nav class="main-menu mobile-menu">
                     <ul>
