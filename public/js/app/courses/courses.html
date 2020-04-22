@@ -1,0 +1,20 @@
+    <!-- Page Preloder -->
+    {{vm.data}}
+    
+    <!-- Cart Page Section Begin -->
+    <div class="cart-page">
+        <div class="container">
+            <strong ng-show="!vm.courses">Loading...</strong>
+            <ul>
+                <li ng-repeat="course in vm.courses | orderBy:'title' ">
+                    {{course.title}}
+                    <a ng-href="{{course.courseUrl}}">
+                        <strong ng-bind="course.description"></strong>
+                        <span ng-bind="'('+course.price+')'"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Cart Page Section End -->
+

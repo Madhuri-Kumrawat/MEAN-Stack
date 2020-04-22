@@ -12,7 +12,7 @@ var config    =  require('./config');
 //var restrict  =  require('./auth/restrict');
 var flash     =  require('connect-flash');
 var connectMongo = require('connect-mongo');
-
+var courses   =  require('./routes/courses');
 
 //require passport
 var passport=require('passport');
@@ -57,6 +57,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //app.use(restrict);
 app.use('/home',homeRouter);
+app.use('/courses',courses);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
