@@ -20,5 +20,16 @@ router.get('/api/courses',restrict,function(req,res,next){
     res.json(courses);
   });
 });
+/** Course DEtail API  */
+router.get('/api/course-details/:courseId',restrict,function(req,res,next){
+  course.getCourseDetails(req.params.courseId,function(err,course){
+    if(err){
+      return res.status(500).json({error:'Failed to retrive course'});
+    }
+    res.json(course);
+  });
+});
+
+
 
 module.exports = router;

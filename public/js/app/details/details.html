@@ -1,0 +1,17 @@
+   
+    <!-- Cart Page Section Begin -->
+    <div class="cart-page">
+        <div class="container">
+            <strong ng-show="!vm.course">Loading...</strong>
+            <ul>
+                <li>
+                    {{vm.course.title}}
+                        <strong ng-bind="vm.course.description"></strong>
+                        <span ng-bind="'('+vm.course.price+')'"></span>
+                    {{vm.course.author}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Cart Page Section End -->
+

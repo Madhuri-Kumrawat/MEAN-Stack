@@ -1,0 +1,177 @@
+
+    <!-- Page Add Section Begin -->
+    <section class="page-add">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="page-breadcrumb">
+                        <h2>Checkout<span>.</span></h2>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <img src="img/add.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Add Section End -->
+
+    <!-- Cart Total Page Begin -->
+    <section class="cart-total-page spad">
+        <div class="container">
+            <form method="post" class="checkout-form" name="paymentForm" novalidate>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Your Information</h3>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <p class="in-name">Name*</p>
+                            </div>
+                            <div class="col-lg-5">
+                                <input type="text" name="firstName" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-5">
+                                <input type="text" name="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <p class="in-name">Street Address*</p>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text" name="address1">
+                                <input type="text" name="address2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <p class="in-name">Country*</p>
+                            </div>
+                            <div class="col-lg-10">
+                                <select class="cart-select country-usa"  name="country">
+                                    <option>USA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <p class="in-name">City*</p>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text" name="city">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <p class="in-name">Country</p>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <p class="in-name">Post Code/ZIP*</p>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text" name="zipcode">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <p class="in-name">Phone*</p>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text" name="phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="order-table">
+                            <div class="cart-item">
+                                <span>Product</span>
+                                <p class="product-name">Blue Dotted Shirt</p>
+                            </div>
+                            <div class="cart-item">
+                                <span>Price</span>
+                                <p>$29</p>
+                            </div>
+                            <div class="cart-item">
+                                <span>Quantity</span>
+                                <p>1</p>
+                            </div>
+                            <div class="cart-item">
+                                <span>Shipping</span>
+                                <p>$10</p>
+                            </div>
+
+                            <div class="cart-total">
+                                <span>Total</span>
+                                <p>$39</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 payment-method">
+                        <div class="form-group">
+                            <h3>Payment</h3>
+                            <select name="cardType" id="cardType" class="form-control">
+                                <option value=""></option>
+                                <option value="visa">Visa</option>
+                                <option value="master">MasterCard</option>
+                                <option value="amex">American Express</option>
+                                <option value="discover">Discover</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <lable for="cardNumber">Card Number</lable>
+                            <input type="text" name="cardNumber" id="cardNumber" required credit-card ng-model="vm.cardNumber">
+                        </div>
+                        <div class="form-group">
+                            <lable for="cardCode">Security Code</lable>
+                            <input type="text" name="cardCode" id="cardCode" required ng-model="vm.cardCode" ng-minlength="3" ng-maxlength="4">
+                        </div>
+                        <div class="form-group">
+                            <lable for="expirationMonth">Expiration</lable>
+                            <select name="expirationMonth" id="expirationMonth">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select name="expirationMonth" id="expirationMonth">
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                        <input type="submit" class="form-control" value="Place your order">
+                    </div>                    
+                </div>
+                <div ng-show="paymentForm.$submitted" style="color:red;">
+                    <div ng-show="paymentForm.cardNumber.$error.required">
+                        Please enter Credit card Number
+                    </div>
+                    <div ng-show="paymentForm.cardCode.$error.minlength || paymentForm.cardCode.$error.maxlength">
+                        Card Code should be 3-4 digits
+                    </div>
+                    <div ng-show="paymentForm.cardNumber.$error.creditCard">
+                        Not a Valid card number
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Cart Total Page End -->
